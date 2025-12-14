@@ -1,6 +1,6 @@
 # serialized_snapshot_isolation
 **ENHANCING DEADLOCK MANAGEMENT IN DISTRIBUTED DATABASES USING SERIALIZABLE SNAPSHOT ISOLATION**
-* Author: Vipul Reddy
+* Author: Vipul Kumar Bondugula
 * Published In : International Journal of Leading Research Publication(IJLRP)
 * Publication Date: 05-2022
 * E-ISSN: 2582-8010
@@ -47,7 +47,7 @@ Enabled better adaptation to dynamic workloads and contention levels through con
 
 **Citation** \
 MANAGING TRANSACTIONS IN SNAPSHOT ISOLATION WITH ADAPTIVE TIMEOUTS
-* Vipul R 
+* Vipul Kumar Bondugula
 * International Journal of Innovative Research in Engineering & Multidisciplinary Physical Sciences 
 * E-ISSN 2349-7300 
 * License \
@@ -55,7 +55,7 @@ This research is shared for a academic and research purposes. For commercial use
 **Resources** \
 https://www.ijirmps.org/ \
 **Author Contact** \
-**LinkedIn**: http://linkedin.com/in/Please add here | **Email**: please keep email id @gmail.com
+**LinkedIn**: https://www.linkedin.com/in/vipul-b-18468a19/ | **Email**: vipulreddy574@gmail.com
 
 
 
