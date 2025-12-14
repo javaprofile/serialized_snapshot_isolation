@@ -5,7 +5,7 @@
 * Publication Date: 05-2022
 * E-ISSN: 2582-8010
 * Impact Factor: 9.56
-* * Link:
+Link:
 
 **Abstract:**\
 This paper addresses performance degradation in database transaction management caused by high retry counts under fixed timeout strategies in Snapshot Isolation. It examines how predefined timeout values fail to adapt to dynamic workload conditions, leading to premature transaction aborts, excessive retries, and reduced throughput in high-contention environments. The study emphasizes the role of dynamic timeout mechanisms that adjust waiting periods based on system state and transaction behavior to improve efficiency. By learning from prior executions and estimating appropriate completion windows, the proposed approach reduces unnecessary retries and lowers latency across varying node configurations. The paper highlights the need for adaptive, context-aware timeout management to enhance scalability and performance in concurrent database systems.
