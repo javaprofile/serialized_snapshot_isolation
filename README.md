@@ -1,5 +1,5 @@
 # Serialized Snapshot Isolation
-**ENHANCING DEADLOCK MANAGEMENT IN DISTRIBUTED DATABASES USING SERIALIZABLE SNAPSHOT ISOLATION**
+**Enhancing Deadlock Management In Distributed Databases Using Serializable Snapshot Isolation**
 
 ### Paper Information
 - **Author(s):** Vipul Kumar Bondugula
