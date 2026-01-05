@@ -10,43 +10,47 @@
 - **Impact Factor:** 9.56
 
 ### Abstract
-This paper addresses performance degradation in database transaction management caused by high retry counts under fixed timeout strategies in Snapshot Isolation. It examines how predefined timeout values fail to adapt to dynamic workload conditions, leading to premature transaction aborts, excessive retries, and reduced throughput in high-contention environments. The study emphasizes the role of dynamic timeout mechanisms that adjust waiting periods based on system state and transaction behavior to improve efficiency. By learning from prior executions and estimating appropriate completion windows, the proposed approach reduces unnecessary retries and lowers latency across varying node configurations. The paper highlights the need for adaptive, context-aware timeout management to enhance scalability and performance in concurrent database systems.
+This paper addresses the limitations of Snapshot Isolation (SI) by highlighting its vulnerability to non-serializable anomalies and rising deadlock rates in high-contention and distributed environments. While SI offers high concurrency through non-blocking reads and writes, conflicts are often detected only at commit time, leading to frequent aborts under the first-committer-wins rule. The paper emphasizes how these issues worsen as systems scale across multiple nodes and users. It discusses the impact of write skew and commit-time conflicts on system performance and correctness. To mitigate these challenges, the paper explores enhanced concurrency control mechanisms such as Serializable Snapshot Isolation (SSI), which improves correctness by preventing dangerous execution patterns at the cost of additional overhead.
 
 ### Key Contributions
-- **Retry Count Reduction:**
-  Analyzed performance limitations of fixed timeout strategies in Snapshot Isolation that lead to excessive transaction retries under high contention.
+  - **Problem Identification in Snapshot Isolation:**
+    This paper addresses the growing deadlock-like abort problem in Snapshot Isolation by analyzing how commit-time conflict detection and the first-committer-wins rule lead to high abort rates in high-contention and distributed environments.
 
-- **Adaptive Timeout Management:**
-  Designed and evaluated dynamic timeout mechanisms that adjust waiting periods based on workload conditions and transaction behavior.
+- **Concurrency Anomaly Analysis:**
+  Examined non-serializable behaviors such as write skew and phantom-like effects that arise under SI, demonstrating their impact on correctness and transaction stability.
   
-- **Performance Evaluation:**
-  Compared fixed and dynamic timeout approaches across multiple node configurations, demonstrating reduced retry counts, lower latency, and improved throughput.
-  
+- **Distributed System Impact Study:**
+  Analyzed how SI limitations are amplified in distributed databases due to multi-node coordination, data partitioning, and increased concurrent write conflicts.
+
+- **Evaluation of Enhanced Isolation Models:**
+  Studied Serializable Snapshot Isolation (SSI) as an extension to SI, highlighting how dependency tracking reduces dangerous execution patterns and aborts.
+
 - **Research Leadership:**
-  Led the study and implementation focusing on improving transaction efficiency and scalability through intelligent timeout control in concurrent database systems.
+  Led the conceptual analysis and evaluation of concurrency control limitations, focusing on scalability, correctness, and robustness in modern database systems.
+  
 
 ### Relevance & Real-World Impact
-- **Improved Transaction Throughput:**
-  Enhanced system efficiency by minimizing unnecessary retries and premature aborts in Snapshot Isolation–based database systems.
+- **Reduced Transaction Abort Rates:**
+Provides insights into minimizing deadlocks and excessive aborts in SI-based systems operating under heavy write contention.
 
-- **Scalable Concurrency Handling:**
-  Enabled better adaptation to dynamic workloads and contention levels through context-aware timeout management.
+- **Improved Consistency Guarantees:**
+Guides system designers toward stronger isolation models such as SSI to achieve serializability without sacrificing too much performance.
 
-- **System Performance Improvement :** 
-  Reduced computational overhead and transaction latency in high-volume environments by optimizing timeout strategies.
-  
+- **Scalable Distributed Databases:**
+Supports the design of large-scale distributed databases that can handle increasing users and nodes with predictable behavior.
+
 - **Academic & Research Impact:** \
-  Supports ongoing research and educational work in transaction management, concurrency control, and adaptive performance optimization in database systems.
+Contributes to research and education in transaction management, concurrency control, and correctness–performance trade-offs in modern database systems.
 
 **Experimental Results (Summary)**:
 
   | Nodes | Retry Count (Fixed Timeout) | Retry Count (Dynamic Timeout) | Reduction (%)   |
   |-------|-----------------------------| ------------------------------| ----------------|
-  | 3     |  2.1                        | 1.1                           | 47.62           |
-  | 5     |  3.4                        | 1.5                           | 55.88           |
-  | 7     |  4.6                        | 2.0                           | 56.52           |
-  | 9     |  5.3                        | 2.7                           | 49.06           |
-  | 11    |  6.0                        | 3.1                           | 48.33           |
+  | 3     |  3                          | 1                             | 66.67           |
+  | 5     |  7                          | 2                             | 71.43           |
+  | 7     |  12                         | 4                             | 66.67           |
+  | 9     |  17                         | 6                             | 64.71           |
+  | 11    |  23                         | 8                             | 65.22           |
 
 **Citation** \
 ENHANCING DEADLOCK MANAGEMENT IN DISTRIBUTED DATABASES USING SERIALIZABLE SNAPSHOT ISOLATION
